@@ -1,0 +1,18 @@
+{
+  "name": "frameworkless-talk",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/moebiusmania/frameworkless-talk",
+  "author": "Salvatore Laisa <moebiusmania@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "live-server --open=./src/",
+    "deploy": "gh-pages -d src"
+  },
+  "dependencies": {
+    "live-server": "^1.2.0"
+  },
+  "devDependencies": {
+    "gh-pages": "^1.1.0"
+  }
+}
