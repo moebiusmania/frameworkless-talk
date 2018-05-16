@@ -14,6 +14,14 @@ const state = {
   steps,
 }
 
+const date = new Date();
+const tmpl = `
+  <p><b>Example:</b>
+  Today is <time>${date.toLocaleString()}</time></p>
+`;
+
+document.querySelector('.tmpl-example').innerHTML = tmpl;
+
 !url.hash.length ? 
   setTimeout(() => url.hash = '/' + state.steps[0], 500) : null;
 

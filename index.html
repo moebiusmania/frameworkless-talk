@@ -103,6 +103,20 @@ gamepad.addEventListener('button', evt => {
       <p>Watch out! Gamepad API its inconsistent between browser right now! 😵</p>
     </regular-slide>
 
+    <regular-slide title="client side templating" id="templating">
+      <p>The <code>&lt;template&gt;</code> tag and 
+        <a href="https://developers.google.com/web/updates/2015/01/ES6-Template-Strings" target="_blank">ES template strings & tagged templates</a> 
+        are great tools to define a template systems similar to the ones of many libraries</p>
+      <pre>
+const date = new Date(); 
+const tmpl = `&lt;p&gt;&lt;b&gt;Example:&lt;/b&gt;
+  Today is &lt;time&gt;${date.toLocaleString()}&lt;/time&gt;&lt;/p&gt;`;
+      </pre>
+      <div class="tmpl-example"></div>
+      <p>data-binding <b>not</b> included! Did you ever checked out the 
+        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy" target="_blank">ES Proxies</a> ?</p>
+    </regular-slide>
+
     <regular-slide title="...and many other things!" id="other">
       <p>Small things like <code>.map()</code> and spread operators, 
         which help us to quickly solves day-by-day issues like: </p>
@@ -111,7 +125,7 @@ const steps = [...document.querySelectorAll(selector)]
                 .map(e => e.id);
       </pre>
       <p>really, <b>just look at the network panel</b> from dev tools!</p>
-      <h4>6kb of code 😲</h4>
+      <h4>3kb of code 😲</h4>
     </regular-slide>
 
     <regular-slide title="i can throw my build tool away then!" id="tools">
@@ -125,7 +139,7 @@ const steps = [...document.querySelectorAll(selector)]
       </ul>
     </regular-slide>
 
-    <regular-slide title=" ">
+    <regular-slide title=" " id="thanks">
       <h1 class="final">🙏 Thanks! 🙏</h1>
     </regular-slide>
 
