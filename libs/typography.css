@@ -1,0 +1,17 @@
+body{
+  color: #555; 
+  font-size: 1.5em;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #2A8EFF;
+}
+
+p, ul li{
+  font-weight: 300;
+}
+
+ul li{
+  line-height: 1.5em;
+}

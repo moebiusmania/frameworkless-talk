@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <link rel="icon" href="https://milanojs.com/img/icons/icon-144x144.png" type="image/x-icon">
+  <link rel="stylesheet" href="./style.css">
+
+  <title>A frameworkless adventure</title>
+</head>
+<body>
+
+  <gamepad-api></gamepad-api>
+
+  <main>
+    <article id="logo">
+      <img src="./assets/logo.png" alt="">
+    </article>
+
+    <regular-slide title="why frameworkless?" id="why">
+      <p><b>Not</b> every architecture is a SPA.</p>
+      <p>Many techniques are <b>not exclusivity</b> of frameworks.</p>
+      <p>Standards <b>are real</b> and are being adopted by browsers and other environments.</p>
+      <p>Master <b>the language</b> and you will learn frameworks as a consequence.</p>
+      <p><b>Understand</b> the code being implemented by NPM packages.</p>
+    </regular-slide>
+
+    <regular-slide title="this presentation as example" id="example">
+      <p>I want to build a simple presentation tool, taking advantage of:</p>
+      <ul>
+        <li>modular code</li>
+        <li>client side routing</li>
+        <li>animations/transitions</li>
+        <li>keyboard & gamepad navigation</li>
+        <li>reusable components</li>
+        <li>client side templating</li>
+      </ul>
+    </regular-slide>
+
+    <regular-slide title="modular code" id="modular">
+      <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import" target="_blank">ES modules</a> are becoming a reality!</p>
+      <p>Browser are supporting them, Webpack already does that, 
+        Node.js is coming (it's behind flag ATM).</p>
+
+      <pre>
+import { utility } from './module.js';
+
+&lt;script src="module.js" type="module"&gt;&lt;/script&gt;
+      </pre>
+      <p>...and remember CSS already supports <b>@import</b> statement! </p>
+    </regular-slide>
+
+    <regular-slide title="client side routing" id="routing">
+      <p>Hash-based routing it's quite easy to implement for simple use case.</p>
+      <pre>
+window.location.hash = '/route';
+
+window.addEventListener('hashchange', evt => ...);
+      </pre>
+      <p>Also <a href="https://developer.mozilla.org/en-US/docs/Web/API/History_API" target="_blank">History API</a>
+      gives us a way more powerful approach, but it is a bit more complicated to implement.</p>
+    </regular-slide>
+
+    <regular-slide title="...and many other things!" id="other">
+      <p>Small things like <code>.map()</code> and spread operators, 
+        which help us to quickly solves day-by-day issues like: </p>
+      <pre>
+const steps = [...document.querySelectorAll(selector)]
+                .map(e => e.id);
+      </pre>
+      <p>really, <b>just look at the network panel</b> from dev tools!</p>
+      <h4>6kb of code</h4>
+    </regular-slide>
+
+    <regular-slide title="i can throw my build tool away then!" id="tools">
+      <p>We will always need build tools even in the future.</p>
+      <p>Just think of</p>
+      <ul>
+        <li>optimization</li>
+        <li>transpiling</li>
+        <li>type checking</li>
+        <li>analysis</li>
+      </ul>
+    </regular-slide>
+
+  </main>
+  
+
+  <script src="index.js" type="module"></script>
+</body>
+</html>
