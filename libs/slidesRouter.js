@@ -19,11 +19,18 @@ export const nextSlide = (state) => {
   state.current++;
   const max = state.steps.length - 1;
   state.current > max ? state.current = max : null;
+  return state;
 }
 
 export const prevSlide = (state) => {
   state.current--;
   state.current < 0 ? state.current = 0 : null;
+  return state;
+}
+
+export const navigate = (state) => {
+  url.hash = '/' + state.steps[state.current];
+  return state;
 }
 
 export const initSlides = (state) => {
@@ -41,6 +48,6 @@ export const initSlides = (state) => {
         break;
     }
 
-    url.hash = '/' + state.steps[state.current];
+    navigate(state);
   });
 }

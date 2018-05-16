@@ -15,3 +15,9 @@ p, ul li{
 ul li{
   line-height: 1.5em;
 }
+
+h1.final{
+  font-size: 4.5em;
+  text-align: center;
+  margin-top: 150px;
+}

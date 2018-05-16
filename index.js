@@ -2,7 +2,7 @@
 
 import Slide from './components/slide.js';
 import GamepadApi from './components/gamepad.js';
-import { initSlides, nextSlide, prevSlide } from './libs/slidesRouter.js';
+import { initSlides, nextSlide, prevSlide, navigate } from './libs/slidesRouter.js';
 import { selector, url } from './libs/consts.js';
 
 const gamepad = document.querySelector('gamepad-api');
@@ -19,6 +19,7 @@ const state = {
 
 gamepad.addEventListener('button', evt => {
   evt.detail.button === 'prev' ? prevSlide(state) : nextSlide(state);
+  navigate(state);
 });
 
 initSlides(state);

@@ -33,8 +33,8 @@
         <li>modular code</li>
         <li>client side routing</li>
         <li>animations/transitions</li>
-        <li>keyboard & gamepad navigation</li>
         <li>reusable components</li>
+        <li>keyboard & gamepad navigation</li>
         <li>client side templating</li>
       </ul>
     </regular-slide>
@@ -63,6 +63,46 @@ window.addEventListener('hashchange', evt => ...);
       gives us a way more powerful approach, but it is a bit more complicated to implement.</p>
     </regular-slide>
 
+    <regular-slide title="animations & transition" id="animations">
+      <p>CSS transition, CSS Animations combined with DOM styles/classes
+        manipulations helps us to quickly achieve smooth animations </p>
+      <pre>
+const element = document.querySelector(selector);
+
+element.classList.toggle('my-transition-class');
+      </pre>
+      <p>also the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API" target="_blank">Web Animations API</a>  
+        provides a JS first approach, but I leave that topic to <a href="https://github.com/MakhBeth/Talks/tree/Web-Animation-Api-2-the-vengeance" targe="_blank">Makbeth</a>  😉 </p>
+    </regular-slide>
+
+    <regular-slide title="reusable components" id="components">
+      <p>The <a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components" target="_blank">Web Components v1</a> specification lets you write custom HTML elements
+        that works out-of-the-box in many browsers nowadays</p>
+      <pre>
+class Slide extends HTMLElement { ... };
+
+customElements.define('regular-slide', Slide);
+      </pre>
+      <p>It's a topic I've often covered in the last years, check my 
+        <a href="https://github.com/moebiusmania/webcomponents-v1-talk" target="_blank">previous talks</a> 😎.
+      </p>
+    </regular-slide>
+
+    <regular-slide title="keyboard & gamepad navigation" id="navigation">
+      <p>Keyboard navigation it's easy with regular events.</p>
+      <p>🎮 What about using a gamepad? 🎮 Luckily there is <a href="https://developer.mozilla.org/en-US/docs/Web/API/Gamepad_API/Using_the_Gamepad_API" target="_blank">an (experimental) API</a>  for
+        that and wrapping it in a Web Components makes it easier to implement.
+      </p>
+      <pre>
+const gamepad = document.querySelector('gamepad-api');
+
+gamepad.addEventListener('button', evt => { 
+  // navigation code
+});
+      </pre>
+      <p>Watch out! Gamepad API its inconsistent between browser right now! 😵</p>
+    </regular-slide>
+
     <regular-slide title="...and many other things!" id="other">
       <p>Small things like <code>.map()</code> and spread operators, 
         which help us to quickly solves day-by-day issues like: </p>
@@ -71,18 +111,22 @@ const steps = [...document.querySelectorAll(selector)]
                 .map(e => e.id);
       </pre>
       <p>really, <b>just look at the network panel</b> from dev tools!</p>
-      <h4>6kb of code</h4>
+      <h4>6kb of code 😲</h4>
     </regular-slide>
 
     <regular-slide title="i can throw my build tool away then!" id="tools">
       <p>We will always need build tools even in the future.</p>
-      <p>Just think of</p>
+      <p>🤖 Just think of 🤖</p>
       <ul>
         <li>optimization</li>
         <li>transpiling</li>
         <li>type checking</li>
         <li>analysis</li>
       </ul>
+    </regular-slide>
+
+    <regular-slide title=" ">
+      <h1 class="final">🙏 Thanks! 🙏</h1>
     </regular-slide>
 
   </main>
