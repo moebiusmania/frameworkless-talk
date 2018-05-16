@@ -1,6 +1,6 @@
 'use strict';
 
-import styles from './_styles.js';
+import styles from './ext.styles.js';
 
 export default class Slide extends HTMLElement {
   constructor() {
