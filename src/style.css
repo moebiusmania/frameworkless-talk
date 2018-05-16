@@ -28,6 +28,11 @@ main {
   height: 450px;
 }
 
+.tmpl-example{
+  padding: 5px 15px 0;
+  border: 1px dashed #bbb;
+}
+
 regular-slide, #logo {
   position: absolute;
 

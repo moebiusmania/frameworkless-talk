@@ -2,7 +2,7 @@
 
 import Slide from './components/slide.js';
 import GamepadApi from './components/gamepad.js';
-import { initSlides, nextSlide, prevSlide } from './libs/slidesRouter.js';
+import { initSlides, nextSlide, prevSlide, navigate } from './libs/slidesRouter.js';
 import { selector, url } from './libs/consts.js';
 
 const gamepad = document.querySelector('gamepad-api');
@@ -14,11 +14,20 @@ const state = {
   steps,
 }
 
+const date = new Date();
+const tmpl = `
+  <p><b>Example:</b>
+  Today is <time>${date.toLocaleString()}</time></p>
+`;
+
+document.querySelector('.tmpl-example').innerHTML = tmpl;
+
 !url.hash.length ? 
   setTimeout(() => url.hash = '/' + state.steps[0], 500) : null;
 
 gamepad.addEventListener('button', evt => {
   evt.detail.button === 'prev' ? prevSlide(state) : nextSlide(state);
+  navigate(state);
 });
 
 initSlides(state);
